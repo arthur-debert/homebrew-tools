@@ -1,15 +1,15 @@
-# Arthur-debert Tools
+# arthur-debert Homebrew-Tools
 
 ## How do I install these formulae?
 
-`brew install arthur-debert/tools/<formula>`
+`brew install arthur-debert/homebrew-tools/<formula>`
 
-Or `brew tap arthur-debert/tools` and then `brew install <formula>`.
+Or `brew tap arthur-debert/homebrew-tools` and then `brew install <formula>`.
 
 Or, in a [`brew bundle`](https://github.com/Homebrew/homebrew-bundle) `Brewfile`:
 
 ```ruby
-tap "arthur-debert/tools"
+tap "arthur-debert/homebrew-tools"
 brew "<formula>"
 ```
 
