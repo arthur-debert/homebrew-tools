@@ -2,8 +2,8 @@ class Dotcat < Formula
   include Language::Python::Virtualenv
   desc "Cat structured data, in style"
   homepage "https://github.com/arthur-debert/dotcat"
-  url "https://files.pythonhosted.org/packages/30/56/f503f2b45aecc95c715abeaf0ba71899da0fafddbe6014b068c2ca9c1097/dotcat-0.8.19.tar.gz"
-  sha256 "adefff16d291a1b84f78db8ded1806fedfe243f64f74bcd8c99c1b5a9f3a9f78"
+  url "https://files.pythonhosted.org/packages/5e/c5/197b9769c5d00f4ec3e85cefb9a7c1945e7eb61a17b6c76bf632a3c5150d/dotcat-0.8.22.tar.gz"
+  sha256 "bd07ad2d02b6aa36f300d307953c36a65f625b8a630799e387042162f82e124f"
   depends_on "poetry"
   depends_on "python@3.9"
 
