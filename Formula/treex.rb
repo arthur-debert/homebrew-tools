@@ -5,13 +5,13 @@
 class Treex < Formula
   desc "A CLI file viewer for annotated file trees"
   homepage "https://github.com/arthur-debert/treex"
-  version "0.1.0"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/arthur-debert/treex/releases/download/v0.1.0/treex_Darwin_x86_64.tar.gz"
-      sha256 "82603ade18158b4c666e06bd721e5650b2fbc42ccf6d28bb711839da5d456aac"
+    if Hardware::CPU.intel?
+      url "https://github.com/arthur-debert/treex/releases/download/v0.1.2/treex_Darwin_x86_64.tar.gz"
+      sha256 "7a473c584773cf00594ed35bebb95a2dbd879e9f2afd852837b2edae6356b161"
 
       def install
         bin.install "treex"
@@ -21,9 +21,9 @@ class Treex < Formula
         fish_completion.install "completions/treex.fish"
       end
     end
-    on_arm do
-      url "https://github.com/arthur-debert/treex/releases/download/v0.1.0/treex_Darwin_arm64.tar.gz"
-      sha256 "a212f0e8c3405be7df825d8e4bd456ed51d2419989ef483644e6eee57b8546a8"
+    if Hardware::CPU.arm?
+      url "https://github.com/arthur-debert/treex/releases/download/v0.1.2/treex_Darwin_arm64.tar.gz"
+      sha256 "23b78361164b6542131ef46a107b78cc1df37a65230dccf8b191497aa312423d"
 
       def install
         bin.install "treex"
@@ -36,32 +36,26 @@ class Treex < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/arthur-debert/treex/releases/download/v0.1.0/treex_Linux_x86_64.tar.gz"
-        sha256 "623405ed7a59e291d7fdc53d5d2fca5d13eb9bedf57c19327aba813f466c121c"
-
-        def install
-          bin.install "treex"
-          man1.install "man/man1/treex.1"
-          bash_completion.install "completions/treex.bash"
-          zsh_completion.install "completions/_treex"
-          fish_completion.install "completions/treex.fish"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/arthur-debert/treex/releases/download/v0.1.2/treex_Linux_x86_64.tar.gz"
+      sha256 "50414efcb89dec33a9190ed318439470b0cf0e5b2b5aac1e32881a6046e5cec9"
+      def install
+        bin.install "treex"
+        man1.install "man/man1/treex.1"
+        bash_completion.install "completions/treex.bash"
+        zsh_completion.install "completions/_treex"
+        fish_completion.install "completions/treex.fish"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/arthur-debert/treex/releases/download/v0.1.0/treex_Linux_arm64.tar.gz"
-        sha256 "7f92f1872e8158792d828b48302424237ca1346733e6227aa6d54cc2b629c3f8"
-
-        def install
-          bin.install "treex"
-          man1.install "man/man1/treex.1"
-          bash_completion.install "completions/treex.bash"
-          zsh_completion.install "completions/_treex"
-          fish_completion.install "completions/treex.fish"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/arthur-debert/treex/releases/download/v0.1.2/treex_Linux_arm64.tar.gz"
+      sha256 "edf116fa0915e737179b96a6c8bfc5f330fb95136331b4c6cf9f81ed44cd8b7d"
+      def install
+        bin.install "treex"
+        man1.install "man/man1/treex.1"
+        bash_completion.install "completions/treex.bash"
+        zsh_completion.install "completions/_treex"
+        fish_completion.install "completions/treex.fish"
       end
     end
   end
