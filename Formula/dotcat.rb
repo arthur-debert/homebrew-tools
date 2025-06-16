@@ -5,13 +5,13 @@
 class Dotcat < Formula
   desc "A CLI utility for reading values from structured data files."
   homepage "https://github.com/arthur-debert/dotcat"
-  version "0.9.4"
+  version "0.9.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/dotcat/releases/download/v0.9.4/dotcat_0.9.4_darwin_amd64.tar.gz"
-      sha256 "1c51e73f06a03587879258fd60adb57b423e9a4d4a58ec90d77b3c8fe5aa6c04"
+      url "https://github.com/arthur-debert/dotcat/releases/download/v0.9.5/dotcat_0.9.5_darwin_amd64.tar.gz"
+      sha256 "8ab07c41b29e26fce659c25c04b18f9ae0a1b26e1634b7c1006afd9a3a255319"
 
       def install
         bin.install "dotcat"
@@ -22,8 +22,8 @@ class Dotcat < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/dotcat/releases/download/v0.9.4/dotcat_0.9.4_darwin_arm64.tar.gz"
-      sha256 "bc712fbe8c88ff82456dc4cc5ba39d6ac89ae47ba68e15dbbe5f1ec41e26e853"
+      url "https://github.com/arthur-debert/dotcat/releases/download/v0.9.5/dotcat_0.9.5_darwin_arm64.tar.gz"
+      sha256 "fba7e9edd2e643a641fd3ea136d4e818af1a0af3bd193f99a8d48528eaee82e2"
 
       def install
         bin.install "dotcat"
@@ -37,8 +37,8 @@ class Dotcat < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/dotcat/releases/download/v0.9.4/dotcat_0.9.4_linux_amd64.tar.gz"
-      sha256 "d0dc51c90128e5035ebed66f1c6b00b528c38d57657818f38da049f380faf318"
+      url "https://github.com/arthur-debert/dotcat/releases/download/v0.9.5/dotcat_0.9.5_linux_amd64.tar.gz"
+      sha256 "5f459354bc2b98db9742883f0461c6509349f93c32798d17ec8a136607bd81f6"
       def install
         bin.install "dotcat"
         man1.install "man/man1/dotcat.1"
@@ -48,8 +48,8 @@ class Dotcat < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/dotcat/releases/download/v0.9.4/dotcat_0.9.4_linux_arm64.tar.gz"
-      sha256 "c40990c869022a0af2ba6770882e0f266e3b805c7e55a887d88006c3030497f4"
+      url "https://github.com/arthur-debert/dotcat/releases/download/v0.9.5/dotcat_0.9.5_linux_arm64.tar.gz"
+      sha256 "90a7c4dc16abbdde9c090f73da08b17ccc29bbe5b064921fb09bb8b17a081501"
       def install
         bin.install "dotcat"
         man1.install "man/man1/dotcat.1"
