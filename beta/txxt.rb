@@ -5,46 +5,46 @@
 class Txxt < Formula
   desc "A parser for the txxt markup language with multiple output formats."
   homepage "https://github.com/arthur-debert/txxt"
-  version "0.0.4"
+  version "0.0.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.4/txxt_0.0.4_darwin_amd64.tar.gz"
-      sha256 "79f004be9c8afa3cfda9e3b667059fdfc913f7dddd234ba2013082edd282fd84"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.5/txxt_0.0.5_darwin_amd64.tar.gz"
+      sha256 "fe000e6628d77b7a5894d81da6f51eff716f43db2ab74bae7bbaae4116884a92"
 
       def install
-        bin.install "txxt-parser"
+        bin.install "txxt"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.4/txxt_0.0.4_darwin_arm64.tar.gz"
-      sha256 "596a27b6ebc44679921a59ddb551bea4d1f9a5d70f3a13bc3c7e330d5b96da1d"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.5/txxt_0.0.5_darwin_arm64.tar.gz"
+      sha256 "7917751d2f23ef648227ed44f1738c9533bdc6407910901354eb4c197d1504a6"
 
       def install
-        bin.install "txxt-parser"
+        bin.install "txxt"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.4/txxt_0.0.4_linux_amd64.tar.gz"
-      sha256 "6186d03e64e17601f121d41b8d24d87f4bf5e4f2225f4cfad614deebac727114"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.5/txxt_0.0.5_linux_amd64.tar.gz"
+      sha256 "e7ef35ae81e11a9c8a54520d9e87530ba2a7c2553baa09fd728b42aadb799ffe"
       def install
-        bin.install "txxt-parser"
+        bin.install "txxt"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.4/txxt_0.0.4_linux_arm64.tar.gz"
-      sha256 "6d58e2bb69ea18c13779639c10d7bac753278319d0917aa7565c47b012a24a81"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.5/txxt_0.0.5_linux_arm64.tar.gz"
+      sha256 "92c8308f062faca9f56f3f257d9072293ab4a57bdbc2e288b3fc0917ee70d69b"
       def install
-        bin.install "txxt-parser"
+        bin.install "txxt"
       end
     end
   end
 
   test do
-    system "#{bin}/txxt-parser --help"
+    system "#{bin}/txxt --help"
   end
 end
