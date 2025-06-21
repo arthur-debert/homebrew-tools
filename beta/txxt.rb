@@ -5,21 +5,21 @@
 class Txxt < Formula
   desc "A parser for the txxt markup language with multiple output formats."
   homepage "https://github.com/arthur-debert/txxt"
-  version "0.0.6"
+  version "0.0.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.6/txxt_0.0.6_darwin_amd64.tar.gz"
-      sha256 "29410205afc55fd2a1f8fbc20ccdb15d72dbb894b1a96303c7ab243a5c483bd6"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.7/txxt_0.0.7_darwin_amd64.tar.gz"
+      sha256 "011b7dadb00e205268817ec8589754eb1d305612a831786c599fab72590dfbe4"
 
       def install
         bin.install "txxt"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.6/txxt_0.0.6_darwin_arm64.tar.gz"
-      sha256 "64f03efc80255ad108d4db07793f85d8a4b3b482f720c326c1bc1ab4324a383d"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.7/txxt_0.0.7_darwin_arm64.tar.gz"
+      sha256 "1bd3ebe04eaa8b86d5f865186cf9dfb730dcbc01cd6e585fc6eb4935aede90a6"
 
       def install
         bin.install "txxt"
@@ -29,15 +29,15 @@ class Txxt < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.6/txxt_0.0.6_linux_amd64.tar.gz"
-      sha256 "7d50a725480aa8137e71f48813e5a38363d29c70780e80a3b074c445f9cbb505"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.7/txxt_0.0.7_linux_amd64.tar.gz"
+      sha256 "2611456ff5ef03cf22a03b1ca2691782eee12465b9d22a2389fab5690f2ef86b"
       def install
         bin.install "txxt"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.6/txxt_0.0.6_linux_arm64.tar.gz"
-      sha256 "84eb241ae6270f8eb5977fe793cc313e8c0bcdd1805d2d9184548d25cfd58e2d"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.7/txxt_0.0.7_linux_arm64.tar.gz"
+      sha256 "6d76ccbd871d033cc93cd301f05dd4c8fbbb7bd6c5278fc8d5ae5246faed56de"
       def install
         bin.install "txxt"
       end
