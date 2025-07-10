@@ -5,13 +5,13 @@
 class Treex < Formula
   desc "A CLI file viewer for annotated file trees"
   homepage "https://github.com/arthur-debert/treex"
-  version "0.8.0"
+  version "0.8.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/treex/releases/download/v0.8.0/treex_0.8.0_darwin_amd64.tar.gz"
-      sha256 "a0aaefe5231f6a0a87d055141455045d1c0cbb255361447c72632a4c99185950"
+      url "https://github.com/arthur-debert/treex/releases/download/v0.8.1/treex_0.8.1_darwin_amd64.tar.gz"
+      sha256 "aa0be407f91245f021c10f4030b265c21224735d83184b7f7cf3d8808017f106"
 
       def install
         bin.install "treex"
@@ -22,8 +22,8 @@ class Treex < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/treex/releases/download/v0.8.0/treex_0.8.0_darwin_arm64.tar.gz"
-      sha256 "fcc0fae7be1429281302c595067d64bae9742bde28ff6a1c47f91001f7a5e08a"
+      url "https://github.com/arthur-debert/treex/releases/download/v0.8.1/treex_0.8.1_darwin_arm64.tar.gz"
+      sha256 "568e6d64f55ed6fb8073bc6b4510d48fadba297c4797097beb51c8ac886fe4a7"
 
       def install
         bin.install "treex"
@@ -37,8 +37,8 @@ class Treex < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/treex/releases/download/v0.8.0/treex_0.8.0_linux_amd64.tar.gz"
-      sha256 "f36db52bd24a4984ddfe740a0b01fb588c8fb35ab9cf55bb3eb6c4ed5c092e93"
+      url "https://github.com/arthur-debert/treex/releases/download/v0.8.1/treex_0.8.1_linux_amd64.tar.gz"
+      sha256 "5f86aa42e36526d7aea4665f123da6f5cba64733aa158e94b99fe637586802e9"
       def install
         bin.install "treex"
         man1.install "man/man1/treex.1"
@@ -48,8 +48,8 @@ class Treex < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/treex/releases/download/v0.8.0/treex_0.8.0_linux_arm64.tar.gz"
-      sha256 "e008ed997c520f7a253b840f601e1a0d07cecc4452edcd4aee2ddb0dec6c5f8d"
+      url "https://github.com/arthur-debert/treex/releases/download/v0.8.1/treex_0.8.1_linux_arm64.tar.gz"
+      sha256 "bcce797e8da3d7d25886c8f0aa1a401b6b1a3c1a2b1aef92dd164b01047f0fb2"
       def install
         bin.install "treex"
         man1.install "man/man1/treex.1"
