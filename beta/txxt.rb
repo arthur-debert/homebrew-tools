@@ -5,13 +5,13 @@
 class Txxt < Formula
   desc "A parser for the txxt markup language with multiple output formats."
   homepage "https://github.com/arthur-debert/txxt"
-  version "0.0.16"
+  version "0.0.17"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.16/txxt-cli_0.0.16_darwin_amd64.tar.gz"
-      sha256 "89e426c89f26b51a1aa4b2416ba717e6ad5c040212043867ed82e595b7c8e746"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.17/txxt-cli_0.0.17_darwin_amd64.tar.gz"
+      sha256 "4b77eda30456e58907133127dc3d0c3ed774bc27ae6c44d7f91421d6d843cc87"
 
       def install
         bin.install "txxt"
@@ -19,8 +19,8 @@ class Txxt < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.16/txxt-cli_0.0.16_darwin_arm64.tar.gz"
-      sha256 "a5f4d527fd28b5b9b9eebd97443ee4c5f851fa29245163146cb0941f12b02817"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.17/txxt-cli_0.0.17_darwin_arm64.tar.gz"
+      sha256 "ad66fffb95712397f0cdaa532faa38e2bb28278ced724656698f9cce0deebf57"
 
       def install
         bin.install "txxt"
@@ -31,16 +31,16 @@ class Txxt < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.16/txxt-cli_0.0.16_linux_amd64.tar.gz"
-      sha256 "3cb66584fbf2a0378474b9d49efa3f3b1a0e271d0d2490b563b57fe6ed04bf09"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.17/txxt-cli_0.0.17_linux_amd64.tar.gz"
+      sha256 "f1aa06b3f5e2ae34a4ee29c319e9ccbecf3baf3c98954d507e7ec0b9a1545ae8"
       def install
         bin.install "txxt"
         (lib/"txxt").install "lib/txxt/markdown-bridge.bundle.js"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.16/txxt-cli_0.0.16_linux_arm64.tar.gz"
-      sha256 "3a21bf3e459e2f1fa245c0fb8f99c06387473239cc4b666362ed6177e6e287a1"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.17/txxt-cli_0.0.17_linux_arm64.tar.gz"
+      sha256 "ef574a473e467e250b16412ec61d6d09af0da0b8600faf07071ebdd97a077ade"
       def install
         bin.install "txxt"
         (lib/"txxt").install "lib/txxt/markdown-bridge.bundle.js"
