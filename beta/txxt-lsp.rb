@@ -5,21 +5,21 @@
 class TxxtLsp < Formula
   desc "Language Server Protocol server for the txxt markup language."
   homepage "https://github.com/arthur-debert/txxt"
-  version "0.0.16"
+  version "0.0.17"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.16/txxt-lsp_0.0.16_darwin_amd64.tar.gz"
-      sha256 "25e76c8df1253647774529fefcc80a19bc926ba1a8094f1cf005fb71a530a8d9"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.17/txxt-lsp_0.0.17_darwin_amd64.tar.gz"
+      sha256 "85d52730920ba538a85ea2e5a8cb87dc950d29dac14b25c07cbc4c8864573c06"
 
       def install
         bin.install "txxt-lsp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.16/txxt-lsp_0.0.16_darwin_arm64.tar.gz"
-      sha256 "984c6d9878ef7ca77722cac0312c2df079311a0cc37fa21b8f2a3a6e7f974d83"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.17/txxt-lsp_0.0.17_darwin_arm64.tar.gz"
+      sha256 "c134c042447f917f6552a26d69cdd91a4ba93a3c7b7812c173d41b1c44b385db"
 
       def install
         bin.install "txxt-lsp"
@@ -29,15 +29,15 @@ class TxxtLsp < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.16/txxt-lsp_0.0.16_linux_amd64.tar.gz"
-      sha256 "d5c30611623b14c12550b3c26110afb870ab6aaaeabaf2a775cd8a6be0fdaca6"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.17/txxt-lsp_0.0.17_linux_amd64.tar.gz"
+      sha256 "8749a5e44939472558f508315e013e534ffcdaaaa5d973a2b51da7c5f6c4fbf0"
       def install
         bin.install "txxt-lsp"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.16/txxt-lsp_0.0.16_linux_arm64.tar.gz"
-      sha256 "7153d74549df11452627e729b0f835db34d525459a097edf0baf7eb397db1005"
+      url "https://github.com/arthur-debert/txxt/releases/download/v0.0.17/txxt-lsp_0.0.17_linux_arm64.tar.gz"
+      sha256 "a6270aefff78d1ec80045649223c5e6d9ae0f2073985290b73e5df8045c6f5e5"
       def install
         bin.install "txxt-lsp"
       end
