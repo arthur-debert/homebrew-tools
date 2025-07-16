@@ -5,41 +5,73 @@
 class Nanodoc < Formula
   desc "A minimalist document bundler"
   homepage "https://github.com/arthur-debert/nanodoc-go"
-  version "0.0.2"
+  version "0.0.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/nanodoc-go/releases/download/v0.0.2/nanodoc_0.0.2_darwin_amd64.tar.gz"
-      sha256 "fe7b20fa810825dde9087f11b165ec255e82de805b7165105d4f05f89f3ff8c0"
+      url "https://github.com/arthur-debert/nanodoc-go/releases/download/v0.0.3/nanodoc_0.0.3_darwin_amd64.tar.gz"
+      sha256 "a9683fc8daaba2d4ee23ee836c0a7e055619adeefb5602798cdfff1fd412ac33"
 
       def install
         bin.install "nanodoc"
+
+        # Install shell completions
+        bash_completion.install "completions/nanodoc.bash"
+        zsh_completion.install "completions/nanodoc.zsh"
+        fish_completion.install "completions/nanodoc.fish"
+
+        # Install man page
+        man1.install "man/man1/nanodoc.1.gz"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/nanodoc-go/releases/download/v0.0.2/nanodoc_0.0.2_darwin_arm64.tar.gz"
-      sha256 "37111add95bdf8a8fe212b445097314a963df69e78ee69a9a5c7d61e4dd7442b"
+      url "https://github.com/arthur-debert/nanodoc-go/releases/download/v0.0.3/nanodoc_0.0.3_darwin_arm64.tar.gz"
+      sha256 "2f344a47d80206affc5fbdefd84dc5a7e3c4dc147df77d61e7b4109e7f6aa35f"
 
       def install
         bin.install "nanodoc"
+
+        # Install shell completions
+        bash_completion.install "completions/nanodoc.bash"
+        zsh_completion.install "completions/nanodoc.zsh"
+        fish_completion.install "completions/nanodoc.fish"
+
+        # Install man page
+        man1.install "man/man1/nanodoc.1.gz"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/nanodoc-go/releases/download/v0.0.2/nanodoc_0.0.2_linux_amd64.tar.gz"
-      sha256 "b5b2a82f831098895ff166d7aa0375a2bd9fd8d08af2640bdb19c698523266d5"
+      url "https://github.com/arthur-debert/nanodoc-go/releases/download/v0.0.3/nanodoc_0.0.3_linux_amd64.tar.gz"
+      sha256 "09c1f38b071e7f0285f6b941f38e68a07a80435fb332bd8d473a1a628f251e5f"
       def install
         bin.install "nanodoc"
+
+        # Install shell completions
+        bash_completion.install "completions/nanodoc.bash"
+        zsh_completion.install "completions/nanodoc.zsh"
+        fish_completion.install "completions/nanodoc.fish"
+
+        # Install man page
+        man1.install "man/man1/nanodoc.1.gz"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/nanodoc-go/releases/download/v0.0.2/nanodoc_0.0.2_linux_arm64.tar.gz"
-      sha256 "60f9409ac628bf02a79b7964c6869008a1fc1058d301fe867b5b744503f91d8a"
+      url "https://github.com/arthur-debert/nanodoc-go/releases/download/v0.0.3/nanodoc_0.0.3_linux_arm64.tar.gz"
+      sha256 "693747a679e49231df95d42d5a980525ecbbcdaf437085843feb04c0b54c2a60"
       def install
         bin.install "nanodoc"
+
+        # Install shell completions
+        bash_completion.install "completions/nanodoc.bash"
+        zsh_completion.install "completions/nanodoc.zsh"
+        fish_completion.install "completions/nanodoc.fish"
+
+        # Install man page
+        man1.install "man/man1/nanodoc.1.gz"
       end
     end
   end
