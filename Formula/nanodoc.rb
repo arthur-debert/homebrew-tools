@@ -5,13 +5,13 @@
 class Nanodoc < Formula
   desc "A minimalist document bundler"
   homepage "https://github.com/arthur-debert/nanodoc"
-  version "0.4.1"
+  version "0.4.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/nanodoc/releases/download/v0.4.1/nanodoc_0.4.1_darwin_amd64.tar.gz"
-      sha256 "7be8626df3db4771e7c3645efd1abd8028a3056a5ecf746e4e7e5d58cbb68b7f"
+      url "https://github.com/arthur-debert/nanodoc/releases/download/v0.4.2/nanodoc_0.4.2_darwin_amd64.tar.gz"
+      sha256 "6975a8e093608436b336dfcba495fa20319a2cdfc1f37361b8efd13ee111f6ac"
 
       def install
         bin.install "nanodoc"
@@ -26,8 +26,8 @@ class Nanodoc < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/nanodoc/releases/download/v0.4.1/nanodoc_0.4.1_darwin_arm64.tar.gz"
-      sha256 "46a67844f0aa35258f598ef5716dfe4b766518078371f77971b0b4d838fed349"
+      url "https://github.com/arthur-debert/nanodoc/releases/download/v0.4.2/nanodoc_0.4.2_darwin_arm64.tar.gz"
+      sha256 "fc03e2e98fecf2cf35d1c13072e3268a7137a6a44a5f5a980f21755c11121b40"
 
       def install
         bin.install "nanodoc"
@@ -45,8 +45,8 @@ class Nanodoc < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/nanodoc/releases/download/v0.4.1/nanodoc_0.4.1_linux_amd64.tar.gz"
-      sha256 "c67e3abd21e51ebab997c2e8c8af500e669f5bc2656d90cca90c52d0e30fee33"
+      url "https://github.com/arthur-debert/nanodoc/releases/download/v0.4.2/nanodoc_0.4.2_linux_amd64.tar.gz"
+      sha256 "31334467e3eba2310483e5a783d6285dc28565497aede33eb3dd08357ae61e01"
       def install
         bin.install "nanodoc"
 
@@ -60,8 +60,8 @@ class Nanodoc < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/nanodoc/releases/download/v0.4.1/nanodoc_0.4.1_linux_arm64.tar.gz"
-      sha256 "0f098a9ee885ec516f4cee770b1fe788cb36f92bc1632470d32f4bf26932d66f"
+      url "https://github.com/arthur-debert/nanodoc/releases/download/v0.4.2/nanodoc_0.4.2_linux_arm64.tar.gz"
+      sha256 "04e8962d375d4f15dc6a242e527cab57cca2ce3ddb00c1c41981ed1af6fe8490"
       def install
         bin.install "nanodoc"
 
