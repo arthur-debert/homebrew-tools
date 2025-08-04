@@ -5,59 +5,73 @@
 class Padz < Formula
   desc "A simple command-line note-taking tool"
   homepage "https://github.com/arthur-debert/padz"
-  version "0.0.6"
+  version "1.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/padz/releases/download/v0.0.6/padz-cli_0.0.6_darwin_amd64.tar.gz"
-      sha256 "8feb1d347d33206063098b683fbc8ad6ddd8e92fb152bd48a2f44279a62e1321"
+      url "https://github.com/arthur-debert/padz/releases/download/v1.0.2/padz-cli_1.0.2_darwin_amd64.tar.gz"
+      sha256 "f1f5f99ad3459274177a26141e058fcfb69ad5379212c4b0e94c07f4f00254c0"
 
       def install
         bin.install "padz"
-        man1.install "man/man1/padz.1.gz"
-        bash_completion.install "completions/padz.bash" => "padz"
-        zsh_completion.install "completions/_padz" => "_padz"
-        fish_completion.install "completions/padz.fish"
+
+        # Install shell completions
+        bash_completion.install "completions/padz.bash" if File.exist?("completions/padz.bash")
+        zsh_completion.install "completions/_padz" if File.exist?("completions/_padz")
+        fish_completion.install "completions/padz.fish" if File.exist?("completions/padz.fish")
+
+        # Install man page
+        man1.install "man/man1/padz.1.gz" if File.exist?("man/man1/padz.1.gz")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/padz/releases/download/v0.0.6/padz-cli_0.0.6_darwin_arm64.tar.gz"
-      sha256 "32fb437fca0396854d6536400ae52f0ff7ceb407aa3ae0971816cd209951ac45"
+      url "https://github.com/arthur-debert/padz/releases/download/v1.0.2/padz-cli_1.0.2_darwin_arm64.tar.gz"
+      sha256 "570573eb9f9dea0f5fb4834fac43e13e43feb3771a2fe7501eac753a175a947a"
 
       def install
         bin.install "padz"
-        man1.install "man/man1/padz.1.gz"
-        bash_completion.install "completions/padz.bash" => "padz"
-        zsh_completion.install "completions/_padz" => "_padz"
-        fish_completion.install "completions/padz.fish"
+
+        # Install shell completions
+        bash_completion.install "completions/padz.bash" if File.exist?("completions/padz.bash")
+        zsh_completion.install "completions/_padz" if File.exist?("completions/_padz")
+        fish_completion.install "completions/padz.fish" if File.exist?("completions/padz.fish")
+
+        # Install man page
+        man1.install "man/man1/padz.1.gz" if File.exist?("man/man1/padz.1.gz")
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/padz/releases/download/v0.0.6/padz-cli_0.0.6_linux_amd64.tar.gz"
-      sha256 "0e77694a0e55243f081ce992255319549efad1f2a78e3cf9bd27514b70d468a9"
-
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/arthur-debert/padz/releases/download/v1.0.2/padz-cli_1.0.2_linux_amd64.tar.gz"
+      sha256 "c812c0f880876507df29e662920388753b006ac16b0184a139ca5fe3f016d507"
       def install
         bin.install "padz"
-        man1.install "man/man1/padz.1.gz"
-        bash_completion.install "completions/padz.bash" => "padz"
-        zsh_completion.install "completions/_padz" => "_padz"
-        fish_completion.install "completions/padz.fish"
+
+        # Install shell completions
+        bash_completion.install "completions/padz.bash" if File.exist?("completions/padz.bash")
+        zsh_completion.install "completions/_padz" if File.exist?("completions/_padz")
+        fish_completion.install "completions/padz.fish" if File.exist?("completions/padz.fish")
+
+        # Install man page
+        man1.install "man/man1/padz.1.gz" if File.exist?("man/man1/padz.1.gz")
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/padz/releases/download/v0.0.6/padz-cli_0.0.6_linux_arm64.tar.gz"
-      sha256 "20e14a4937233829eb76c13a986cb7aeb5a8274aaf5289a47be638aaa0fd0205"
-
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/arthur-debert/padz/releases/download/v1.0.2/padz-cli_1.0.2_linux_arm64.tar.gz"
+      sha256 "f2b449624a83a0a8cfdffb82cca70a0e437f5fae08e00971f4dab728868b855c"
       def install
         bin.install "padz"
-        man1.install "man/man1/padz.1.gz"
-        bash_completion.install "completions/padz.bash" => "padz"
-        zsh_completion.install "completions/_padz" => "_padz"
-        fish_completion.install "completions/padz.fish"
+
+        # Install shell completions
+        bash_completion.install "completions/padz.bash" if File.exist?("completions/padz.bash")
+        zsh_completion.install "completions/_padz" if File.exist?("completions/_padz")
+        fish_completion.install "completions/padz.fish" if File.exist?("completions/padz.fish")
+
+        # Install man page
+        man1.install "man/man1/padz.1.gz" if File.exist?("man/man1/padz.1.gz")
       end
     end
   end
