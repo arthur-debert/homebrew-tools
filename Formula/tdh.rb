@@ -5,13 +5,13 @@
 class Tdh < Formula
   desc "A simple command-line todo list manager"
   homepage "https://github.com/arthur-debert/tdh"
-  version "0.1.3"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/tdh/releases/download/v0.1.3/tdh_0.1.3_darwin_amd64.tar.gz"
-      sha256 "822517da0138e5593806ebd1c515beee594d6b2f90a80de7914d4f7d22d2fed4"
+      url "https://github.com/arthur-debert/tdh/releases/download/v0.2.0/tdh_0.2.0_darwin_amd64.tar.gz"
+      sha256 "dfbe501df0b7d62128459d88d92aec68d17c57914433b206de88a6e9a93f3768"
 
       def install
         bin.install "tdh"
@@ -26,8 +26,8 @@ class Tdh < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/tdh/releases/download/v0.1.3/tdh_0.1.3_darwin_arm64.tar.gz"
-      sha256 "cd24089f6c2f5eb72b8f15e5bd66ea3e63762130772690392ad35b3a9de2c936"
+      url "https://github.com/arthur-debert/tdh/releases/download/v0.2.0/tdh_0.2.0_darwin_arm64.tar.gz"
+      sha256 "8393fa210063f74bbd16a14b9a88b299273a3214eaaf7fa8c4001b8307eb78a2"
 
       def install
         bin.install "tdh"
@@ -45,8 +45,8 @@ class Tdh < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/tdh/releases/download/v0.1.3/tdh_0.1.3_linux_amd64.tar.gz"
-      sha256 "dd92dfb6b199d834ee7da5bcf2d9dc70cb2e57f116070c50ee04dcdd7e0940ef"
+      url "https://github.com/arthur-debert/tdh/releases/download/v0.2.0/tdh_0.2.0_linux_amd64.tar.gz"
+      sha256 "58b91c910550b20642b6347c05ed4c2e1c449de1d403629e5ea2d8f46cb50d4a"
       def install
         bin.install "tdh"
 
@@ -60,8 +60,8 @@ class Tdh < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/tdh/releases/download/v0.1.3/tdh_0.1.3_linux_arm64.tar.gz"
-      sha256 "97b1c9296b4601df2516af1059939b2d2ed37030c5d016beed2131476564fb62"
+      url "https://github.com/arthur-debert/tdh/releases/download/v0.2.0/tdh_0.2.0_linux_arm64.tar.gz"
+      sha256 "a329af5621c8888562c7b54d27b6f9d88a810bc063b0baab89cdd92243d0be06"
       def install
         bin.install "tdh"
 
