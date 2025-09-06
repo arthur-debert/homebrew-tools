@@ -5,13 +5,13 @@
 class Dodot < Formula
   desc "Description of your CLI tool"
   homepage "https://github.com/arthur-debert/dodot"
-  version "0.3.0"
+  version "0.3.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.0/dodot-cli_0.3.0_darwin_amd64.tar.gz"
-      sha256 "ab203944bb11e2ad7e6d3fb161f8fa3bd62823a638f370dc84211d55f9369287"
+      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.2/dodot-cli_0.3.2_darwin_amd64.tar.gz"
+      sha256 "bf1173692151e64406442ab993c65fc8692e5c7ac064c92e701192283ac62975"
 
       def install
         bin.install "dodot"
@@ -23,11 +23,17 @@ class Dodot < Formula
 
         # Install man page
         man1.install "man/man1/dodot.1.gz" if File.exist?("man/man1/dodot.1.gz")
+
+        # Install shell integration scripts
+        pkgshare.install "shell" if Dir.exist?("shell")
+
+        # Install styles configuration
+        pkgshare.install "styles" if Dir.exist?("styles")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.0/dodot-cli_0.3.0_darwin_arm64.tar.gz"
-      sha256 "44be644a62ed0acecae369f2cb988ca4d95484eb925e512eac7cdd7de833876c"
+      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.2/dodot-cli_0.3.2_darwin_arm64.tar.gz"
+      sha256 "f6dac30e1c4745b6bad174283e61281f77b158ceed903e9d1d8500960c5193ce"
 
       def install
         bin.install "dodot"
@@ -39,14 +45,20 @@ class Dodot < Formula
 
         # Install man page
         man1.install "man/man1/dodot.1.gz" if File.exist?("man/man1/dodot.1.gz")
+
+        # Install shell integration scripts
+        pkgshare.install "shell" if Dir.exist?("shell")
+
+        # Install styles configuration
+        pkgshare.install "styles" if Dir.exist?("styles")
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.0/dodot-cli_0.3.0_linux_amd64.tar.gz"
-      sha256 "c43bfb75256e0555f94549767c98449db9eb7f84444e94866c463c61787ee84a"
+      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.2/dodot-cli_0.3.2_linux_amd64.tar.gz"
+      sha256 "f8bdd73994531e6eb50b6b211d32382d78a3277ded36e53fb6611ae565e20df9"
       def install
         bin.install "dodot"
 
@@ -57,11 +69,17 @@ class Dodot < Formula
 
         # Install man page
         man1.install "man/man1/dodot.1.gz" if File.exist?("man/man1/dodot.1.gz")
+
+        # Install shell integration scripts
+        pkgshare.install "shell" if Dir.exist?("shell")
+
+        # Install styles configuration
+        pkgshare.install "styles" if Dir.exist?("styles")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.0/dodot-cli_0.3.0_linux_arm64.tar.gz"
-      sha256 "50f2d682c33511d6a244d89c1afdf8a3f14bb09bc0408e3f412b7d7545b36228"
+      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.2/dodot-cli_0.3.2_linux_arm64.tar.gz"
+      sha256 "b1cc282f9fe362cb02496d4b9d029210c1f13dfb62cccc6ab59b440609e7de95"
       def install
         bin.install "dodot"
 
@@ -72,6 +90,12 @@ class Dodot < Formula
 
         # Install man page
         man1.install "man/man1/dodot.1.gz" if File.exist?("man/man1/dodot.1.gz")
+
+        # Install shell integration scripts
+        pkgshare.install "shell" if Dir.exist?("shell")
+
+        # Install styles configuration
+        pkgshare.install "styles" if Dir.exist?("styles")
       end
     end
   end
