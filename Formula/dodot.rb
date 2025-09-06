@@ -5,13 +5,13 @@
 class Dodot < Formula
   desc "Description of your CLI tool"
   homepage "https://github.com/arthur-debert/dodot"
-  version "0.3.3"
+  version "0.3.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.3/dodot-cli_0.3.3_darwin_amd64.tar.gz"
-      sha256 "14f49dcf1c0342e72f14e21d73bf8eb95bf7b89e498221b489c7f1e142a2b2e2"
+      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.4/dodot-cli_0.3.4_darwin_amd64.tar.gz"
+      sha256 "d6623965aeac7fcbd6018851dd6fc31acd4ad222fb18c774aedc41fcd7a765a5"
 
       def install
         bin.install "dodot"
@@ -32,8 +32,8 @@ class Dodot < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.3/dodot-cli_0.3.3_darwin_arm64.tar.gz"
-      sha256 "7bb85c82c90341d1a5fcc588b8768c76fdb96ae9d4124d9b8ef289f86d5cc31f"
+      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.4/dodot-cli_0.3.4_darwin_arm64.tar.gz"
+      sha256 "ff8547a8679dda5bfac7fa10cfd5219ef4e8ab61009ff67e000944f0aeea651e"
 
       def install
         bin.install "dodot"
@@ -57,8 +57,8 @@ class Dodot < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.3/dodot-cli_0.3.3_linux_amd64.tar.gz"
-      sha256 "5b1000ea5eb7dedef30a3c9a1d481caa086e25d46781f7a023276368e89cdefc"
+      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.4/dodot-cli_0.3.4_linux_amd64.tar.gz"
+      sha256 "d785d17b9b453d2ce69e85050efbf22264900814dcbe10ebb192e4b6c098d303"
       def install
         bin.install "dodot"
 
@@ -78,8 +78,8 @@ class Dodot < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.3/dodot-cli_0.3.3_linux_arm64.tar.gz"
-      sha256 "04b730aa671f98cceabbd01836cbb2ed503e31e00d4fb41644008315951ab19c"
+      url "https://github.com/arthur-debert/dodot/releases/download/v0.3.4/dodot-cli_0.3.4_linux_arm64.tar.gz"
+      sha256 "bfeda4aca78d71a0000e90f4828e7de3c875b4dc86537b34d1c05ca256e662c7"
       def install
         bin.install "dodot"
 
