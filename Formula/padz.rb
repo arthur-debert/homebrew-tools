@@ -5,13 +5,13 @@
 class Padz < Formula
   desc "A simple command-line note-taking tool"
   homepage "https://github.com/arthur-debert/padz"
-  version "3.0.0"
+  version "4.0.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/padz/releases/download/v3.0.0/padz-cli_3.0.0_darwin_amd64.tar.gz"
-      sha256 "6bb8d2e902de9ae388fd54b7172b863d831a635f33f3470d05f377b7be6908be"
+      url "https://github.com/arthur-debert/padz/releases/download/v4.0.0/padz-cli_4.0.0_darwin_amd64.tar.gz"
+      sha256 "4d801ecf7a7614987ecf387ac66db517b368dd24645879c67ebe70afc17d46c5"
 
       def install
         bin.install "padz"
@@ -26,8 +26,8 @@ class Padz < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/padz/releases/download/v3.0.0/padz-cli_3.0.0_darwin_arm64.tar.gz"
-      sha256 "39db30d615ead0e944e644bc580e6261e65141255b7b1cf7bf277a19e1b64fbe"
+      url "https://github.com/arthur-debert/padz/releases/download/v4.0.0/padz-cli_4.0.0_darwin_arm64.tar.gz"
+      sha256 "73f9e93f34958a96ce9fb7b11904293e82865c1eaa1aa6d0f20d3f7171bbe103"
 
       def install
         bin.install "padz"
@@ -45,8 +45,8 @@ class Padz < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/padz/releases/download/v3.0.0/padz-cli_3.0.0_linux_amd64.tar.gz"
-      sha256 "e1032bf0c0ddcafceb49b6b6abeee51ea3cc7b47f410255e87810cb602869bd1"
+      url "https://github.com/arthur-debert/padz/releases/download/v4.0.0/padz-cli_4.0.0_linux_amd64.tar.gz"
+      sha256 "60d492433b7154472aa9c1a04ea24c90406ffd71cd41a95988207509c56e117e"
       def install
         bin.install "padz"
 
@@ -60,8 +60,8 @@ class Padz < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/padz/releases/download/v3.0.0/padz-cli_3.0.0_linux_arm64.tar.gz"
-      sha256 "6cfca50c6ffdedcb78d6f8fe58b3b7b5f3000d51f776d1e8eebe7f674eee5189"
+      url "https://github.com/arthur-debert/padz/releases/download/v4.0.0/padz-cli_4.0.0_linux_arm64.tar.gz"
+      sha256 "2c20fee928ac383e4f8055fcb3ebdca9aa22aeb7bc36d1d4411c275405dd5270"
       def install
         bin.install "padz"
 
