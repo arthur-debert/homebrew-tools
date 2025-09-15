@@ -5,13 +5,13 @@
 class Too < Formula
   desc "A simple command-line todo list manager"
   homepage "https://github.com/arthur-debert/too"
-  version "0.6.0"
+  version "0.7.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arthur-debert/too/releases/download/v0.6.0/too_0.6.0_darwin_amd64.tar.gz"
-      sha256 "08a6fb588957141161f21ee96e014e0a29c3bb3d2431e28bb896878e8601f3fb"
+      url "https://github.com/arthur-debert/too/releases/download/v0.7.0/too_0.7.0_darwin_amd64.tar.gz"
+      sha256 "9d1801af8280dd1601ec93b7d4d4fba98202969da829dad77b0e1aa0cf44ce6e"
 
       def install
         bin.install "too"
@@ -26,8 +26,8 @@ class Too < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arthur-debert/too/releases/download/v0.6.0/too_0.6.0_darwin_arm64.tar.gz"
-      sha256 "66c822a194b0ba305af42dcf4a3bf9e74a951a6741e60c58042c9c2aa16f1a7e"
+      url "https://github.com/arthur-debert/too/releases/download/v0.7.0/too_0.7.0_darwin_arm64.tar.gz"
+      sha256 "6235f2ba53d167f6ef1ff12fe5c645d93d10f4d61eda10626517b0410aa6943d"
 
       def install
         bin.install "too"
@@ -45,8 +45,8 @@ class Too < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/too/releases/download/v0.6.0/too_0.6.0_linux_amd64.tar.gz"
-      sha256 "e3bb3c4c2cb594043ce765ae1608a8b22057f2501315ad610cf8558491cd5e1f"
+      url "https://github.com/arthur-debert/too/releases/download/v0.7.0/too_0.7.0_linux_amd64.tar.gz"
+      sha256 "e2824abc13ed7dbd00082d8a54692fcb68b7f6c84ab8b047b9839072cb28b979"
       def install
         bin.install "too"
 
@@ -60,8 +60,8 @@ class Too < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/too/releases/download/v0.6.0/too_0.6.0_linux_arm64.tar.gz"
-      sha256 "9774407dcfb51e56029783c12a01dd59851d858b6e4723e39f8f8e1ba1072e3d"
+      url "https://github.com/arthur-debert/too/releases/download/v0.7.0/too_0.7.0_linux_arm64.tar.gz"
+      sha256 "5c244ffb6bb216e809ba25a2995125da0889152f3f07ff83d8a3a91e9a68814c"
       def install
         bin.install "too"
 
