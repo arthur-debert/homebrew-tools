@@ -5,12 +5,12 @@
 class Treex < Formula
   desc "A modern tree command for displaying file hierarchies"
   homepage "https://github.com/arthur-debert/treex"
-  version "0.1.7"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
-    url "https://github.com/arthur-debert/treex/releases/download/v0.1.7/treex_Darwin_all.tar.gz"
-    sha256 "185294185f688657ef1dd2225d614af47546b03407c87405d86cbebe590bcca0"
+    url "https://github.com/arthur-debert/treex/releases/download/v0.2.0/treex_Darwin_all.tar.gz"
+    sha256 "0e86149cc1cd0f342ac60f4d220f54527f85b7e873689ac1641e2e2710e79b3b"
 
     def install
       bin.install "treex"
@@ -24,8 +24,8 @@ class Treex < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/treex/releases/download/v0.1.7/treex_Linux_x86_64.tar.gz"
-      sha256 "5f4a552b4dae4d08052070b98ff5c5042a76bfb4373b45bfcbd339d537f4ad51"
+      url "https://github.com/arthur-debert/treex/releases/download/v0.2.0/treex_Linux_x86_64.tar.gz"
+      sha256 "2407dd99e41627c9e59849142cc3b3150c43b193167b13d72c7a3f4a10c3f9da"
       def install
         bin.install "treex"
 
@@ -36,8 +36,8 @@ class Treex < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arthur-debert/treex/releases/download/v0.1.7/treex_Linux_arm64.tar.gz"
-      sha256 "6f41caa33fc13421bcd0551bfa69f05a8760aae9745da959f25dc5904879c5d5"
+      url "https://github.com/arthur-debert/treex/releases/download/v0.2.0/treex_Linux_arm64.tar.gz"
+      sha256 "65d7ab9e40bae85d09678158f89f91e25bf3f4bbf4d61fbaaa7defa0f683f3da"
       def install
         bin.install "treex"
 
