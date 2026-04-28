@@ -13,24 +13,24 @@
 class SimpleGal < Formula
   desc "A minimal static site generator for fine art photography portfolios"
   homepage "https://github.com/arthur-debert/simple-gal"
-  version "0.20.1-rc.1"
+  version "0.20.3"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/arthur-debert/simple-gal/releases/download/v0.20.1-rc.1/simple-gal-aarch64-apple-darwin.tar.gz"
-      sha256 "47a75de9def9788a605f2642f4cd2b2619b693ce0524ada0a2e644d6141db9eb"
+      url "https://github.com/arthur-debert/simple-gal/releases/download/v0.20.3/simple-gal-aarch64-apple-darwin.tar.gz"
+      sha256 "bb88d6f8fd405fcd567f66904e05c6f5cc602a348eee7148c82499856545631e"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/arthur-debert/simple-gal/releases/download/v0.20.1-rc.1/simple-gal-x86_64-linux-gnu.tar.gz"
-      sha256 "941309e78c3e9d7135a27854b6c66af7ac49c97c7ceaca1bd7d918baa1290597"
+      url "https://github.com/arthur-debert/simple-gal/releases/download/v0.20.3/simple-gal-x86_64-linux-gnu.tar.gz"
+      sha256 "0bb1c8d811a89fcde4516a2319e5b05765286448e2314ef40fadb0d3e73f88ea"
     end
     on_arm do
-      url "https://github.com/arthur-debert/simple-gal/releases/download/v0.20.1-rc.1/simple-gal-aarch64-linux-gnu.tar.gz"
-      sha256 "5567f09106efe9abc7840287426637a15c3ad55c3c105ebf22609eabd651e8e8"
+      url "https://github.com/arthur-debert/simple-gal/releases/download/v0.20.3/simple-gal-aarch64-linux-gnu.tar.gz"
+      sha256 "dc55e9f38618c493f2cc95dd94d4a92ecee0e783b661e6a6e752565f15dcb456"
     end
   end
 
