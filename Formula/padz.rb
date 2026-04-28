@@ -8,28 +8,28 @@
 class Padz < Formula
   desc "An ergonomic, context-aware scratch pad for the terminal — a good Unix citizen"
   homepage "https://github.com/arthur-debert/padz"
-  version "1.4.2"
+  version "1.8.0-rc.3"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/arthur-debert/padz/releases/download/v1.4.2/padz-aarch64-apple-darwin.tar.gz"
-      sha256 "0b7ec0506c8bd062856437c72b2ec09675aceb0a5413844d8c05f69d932f875f"
+      url "https://github.com/arthur-debert/padz/releases/download/v1.8.0-rc.3/padz-aarch64-apple-darwin.tar.gz"
+      sha256 "600572accb9c45554d3404c44142c714a82ce4c3788fb3030d41a0ffb4c159c7"
     end
     on_intel do
-      url "https://github.com/arthur-debert/padz/releases/download/v1.4.2/padz-x86_64-apple-darwin.tar.gz"
-      sha256 "6df1c29c33ffcdea07894692a1f138c7d908553d585e6974e79a49c95f8df2f0"
+      url "https://github.com/arthur-debert/padz/releases/download/v1.8.0-rc.3/padz-x86_64-apple-darwin.tar.gz"
+      sha256 "3112544bc19f23b735b8317fb1335930b915cacfc12d63cad1a92a85401c7b9e"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/arthur-debert/padz/releases/download/v1.4.2/padz-x86_64-linux-gnu.tar.gz"
-      sha256 "b6dc3476f1b343a4c3886a482a3b568f8cc5e880de3d25a9e9b2082a7b7ec269"
+      url "https://github.com/arthur-debert/padz/releases/download/v1.8.0-rc.3/padz-x86_64-linux-gnu.tar.gz"
+      sha256 "8a495235d0ecb4008cf5114219263c7c0bee30b376d5bbadcece4f453779fbdc"
     end
     on_arm do
-      url "https://github.com/arthur-debert/padz/releases/download/v1.4.2/padz-aarch64-linux-gnu.tar.gz"
-      sha256 "0155d458ff1b8c264dae91b8b3d42eae432088ebd60dfca07daec66b446ac3e2"
+      url "https://github.com/arthur-debert/padz/releases/download/v1.8.0-rc.3/padz-aarch64-linux-gnu.tar.gz"
+      sha256 "89cde0580e437753ead51d070517ef205c6a8abcc2c39a377c47cd7c9ddff5be"
     end
   end
 
