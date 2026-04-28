@@ -8,24 +8,24 @@
 class Burgertocow < Formula
   desc "CLI for burgertocow: reverse-engineers diffs on rendered minijinja templates back into template or variable changes."
   homepage "https://github.com/arthur-debert/burgertocow"
-  version "0.2.0-rc.1"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.2.0-rc.1/burgertocow-aarch64-apple-darwin.tar.gz"
-      sha256 "d1bdc416ad582368988c0aa8e3d4c11d489874e6a69b8c3a591dca858c8d5d25"
+      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.2.0/burgertocow-aarch64-apple-darwin.tar.gz"
+      sha256 "f805144fdf4fe4d40c6b12a8bb2b140638dc64e70252f89af947d0ef51e01a51"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.2.0-rc.1/burgertocow-x86_64-linux-gnu.tar.gz"
-      sha256 "e1ac3dd7a95f87aaabe9bad0f746db41e8b035aab7dc5efb5ed0614551db19f0"
+      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.2.0/burgertocow-x86_64-linux-gnu.tar.gz"
+      sha256 "2edb5ae4e355f55655e668f20beff5ca9253f4f89c9d11af5359710b9094acf0"
     end
     on_arm do
-      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.2.0-rc.1/burgertocow-aarch64-linux-gnu.tar.gz"
-      sha256 "9a254b8de3063e6df18c731e2caab1d241d1026ad45129910cd3ff21011b544a"
+      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.2.0/burgertocow-aarch64-linux-gnu.tar.gz"
+      sha256 "1e0a9aa63672cb3bf727ee34b0ce6bde124f43ae0aa14d8fcedf14f0a229135a"
     end
   end
 
