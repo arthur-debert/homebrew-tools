@@ -13,24 +13,24 @@
 class Dodot < Formula
   desc "A dotfiles manager that uses symlinks for live editing"
   homepage "https://github.com/arthur-debert/dodot"
-  version "1.0.0-rc.2"
+  version "1.0.0-rc.3"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/arthur-debert/dodot/releases/download/v1.0.0-rc.2/dodot-aarch64-apple-darwin.tar.gz"
-      sha256 "17ea2e4fb0de2b292053f52b4c899f6b7bb3c4339b52b0366d5ae4726e7b33d7"
+      url "https://github.com/arthur-debert/dodot/releases/download/v1.0.0-rc.3/dodot-aarch64-apple-darwin.tar.gz"
+      sha256 "2ef3ffe537868411e5c89094c06305d0466a7213a7a391f146422f6474bbe6f4"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/arthur-debert/dodot/releases/download/v1.0.0-rc.2/dodot-x86_64-linux-gnu.tar.gz"
-      sha256 "6630464a7a5f8a9c61d04865dbb304b5fb4856ec89ec0101d293e35e91633f12"
+      url "https://github.com/arthur-debert/dodot/releases/download/v1.0.0-rc.3/dodot-x86_64-linux-gnu.tar.gz"
+      sha256 "5c805732f88aa4f3b92fe1ffcd940ce8b58f07bd5bb566310026af9f34ec3001"
     end
     on_arm do
-      url "https://github.com/arthur-debert/dodot/releases/download/v1.0.0-rc.2/dodot-aarch64-linux-gnu.tar.gz"
-      sha256 "99d7574895f636dc74975b93b5655663fd036aa1c5bf0cc739c45ca517b3406a"
+      url "https://github.com/arthur-debert/dodot/releases/download/v1.0.0-rc.3/dodot-aarch64-linux-gnu.tar.gz"
+      sha256 "637a3fcfbc7cc276cdc3822208e100ff3d1f68ae8761aeecc8fa2328912152da"
     end
   end
 
