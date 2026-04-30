@@ -11,26 +11,26 @@
 # generate shell completion scripts. Add both back when those features land.
 
 class Dodot < Formula
-  desc "A dotfiles manager that uses symlinks for live editing"
+  desc "Dotfiles manager that uses symlinks for live editing"
   homepage "https://github.com/arthur-debert/dodot"
-  version "1.1.0"
+  version "1.1.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/arthur-debert/dodot/releases/download/v1.1.0/dodot-aarch64-apple-darwin.tar.gz"
-      sha256 "1630b27bf39bb74d2f75c9404c91fb14004dbab316c3eec05061155b4df90088"
+      url "https://github.com/arthur-debert/dodot/releases/download/v1.1.1/dodot-aarch64-apple-darwin.tar.gz"
+      sha256 "fd9b427c6878fdae934f348f2237a691d43e1ba1c242d2b5d09cd5d11d6b6155"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/arthur-debert/dodot/releases/download/v1.1.0/dodot-x86_64-linux-gnu.tar.gz"
-      sha256 "ab46bdb55772ec353ba8971dd0fea1c29c5bce0f1429cb83c66a63ff5165b308"
+      url "https://github.com/arthur-debert/dodot/releases/download/v1.1.1/dodot-x86_64-linux-gnu.tar.gz"
+      sha256 "fb9091bade296a60276ff2ef1d415692cb8859b3c4728103884ff97881105fb6"
     end
     on_arm do
-      url "https://github.com/arthur-debert/dodot/releases/download/v1.1.0/dodot-aarch64-linux-gnu.tar.gz"
-      sha256 "f6d3560d3db85eed515532ef45ab528e048a49b74755efdee48ee963ea3fecdd"
+      url "https://github.com/arthur-debert/dodot/releases/download/v1.1.1/dodot-aarch64-linux-gnu.tar.gz"
+      sha256 "1a21a10a23ba5a24a5e13c3d8e225ccb6ff6a27438c4c9766772497964d49b13"
     end
   end
 
@@ -45,6 +45,7 @@ class Dodot < Formula
       Dir["*/dodot"].find { |path| File.file?(path) }
     end
     raise "Could not find dodot in extracted archive" unless executable
+
     bin.install executable
   end
 
