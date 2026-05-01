@@ -20,18 +20,18 @@ class Lexd < Formula
   on_macos do
     on_arm do
       url "https://github.com/lex-fmt/lex/releases/download/v0.9.1/lexd-aarch64-apple-darwin.tar.gz"
-      sha256 "f71cb9e7c37ee5b9ac89c638f52195f5b6613471315aee6fb943553bfeeac3e2"
+      sha256 "1f137d9db12960a668088ceb3e18c18f122f1a6d86b19a5d3e8966551e516575"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/lex-fmt/lex/releases/download/v0.9.1/lexd-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "4d0fc7c24a25b9969081c6f5a17cf410713a88134ae1f936f083bfd5f6a185fd"
+      sha256 "b6fb16845b68c97b169adef4c15a3962ddb82c853e51aa2e1212ee9cbad2a5b5"
     end
     on_arm do
       url "https://github.com/lex-fmt/lex/releases/download/v0.9.1/lexd-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "90582a059337a89d4d31f04e49079c822b769fd5743a30ead0d852c4fb32bdd2"
+      sha256 "f9d3365730c027be8cd8a97fb9ee3e9ff73825c7b22a66a12987de99ccfb3071"
     end
   end
 
