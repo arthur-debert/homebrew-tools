@@ -19,19 +19,19 @@ class Dodot < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/arthur-debert/dodot/releases/download/v2.0.0/dodot-aarch64-apple-darwin.gz"
+      url "https://github.com/arthur-debert/dodot/releases/download/v2.0.0/dodot-aarch64-apple-darwin.tar.gz"
       sha256 "d45e67403d4c333cf95631803239b8539c3f55bbaa9fdc5cbeff1254e3068a7c"
     end
   end
 
   on_linux do
     on_intel do
-      url "{{URL_X86_64_LINUX_GNU}}"
-      sha256 "{{SHA_X86_64_LINUX_GNU}}"
+      url "https://github.com/arthur-debert/dodot/releases/download/v2.0.0/dodot-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "882be19219f33aea6ad827203a2a78ad95e96dbac6d9cb9053ebe8deb9adcd5b"
     end
     on_arm do
-      url "{{URL_AARCH64_LINUX_GNU}}"
-      sha256 "{{SHA_AARCH64_LINUX_GNU}}"
+      url "https://github.com/arthur-debert/dodot/releases/download/v2.0.0/dodot-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "27a7b6fe9e471f52e0626e5c0efc66deba0593751eb02a570d380373e5e41faa"
     end
   end
 
