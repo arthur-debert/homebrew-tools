@@ -14,24 +14,24 @@
 class Burgertocow < Formula
   desc "CLI for burgertocow: reverse-engineers diffs on rendered minijinja templates"
   homepage "https://github.com/arthur-debert/burgertocow"
-  version "0.3.1"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.3.1/burgertocow-aarch64-apple-darwin.tar.gz"
-      sha256 "c503fa8e8fd94c6a6b98b36faa12661ced604540ff0340d270a94ba7792bb029"
+      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.4.0/burgertocow-aarch64-apple-darwin.tar.gz"
+      sha256 "850c98f851d75687d2cd2be8f3b35ae76227ebe13eccbfd7010c43fc1b98a31a"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.3.1/burgertocow-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "51399bc744d779c969ad6a70d5e83486024184605e85d406f6e869657394d68e"
+      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.4.0/burgertocow-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "2a35d4b0d3a93b8aaed435a7b769b9177f670db36807b0061760218067ade634"
     end
     on_arm do
-      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.3.1/burgertocow-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "e6314c8baf323e9f147f22f5685175251f900c9eb9e5b22ed25cabd2e0b10132"
+      url "https://github.com/arthur-debert/burgertocow/releases/download/v0.4.0/burgertocow-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "885d9ac672d665666c922d3d06e04da86069e79c6084cc8d400769f24f02ebec"
     end
   end
 
