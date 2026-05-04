@@ -14,24 +14,24 @@
 class Dodot < Formula
   desc "Dotfiles manager that uses symlinks for live editing"
   homepage "https://github.com/arthur-debert/dodot"
-  version "4.0.0"
+  version "4.1.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/arthur-debert/dodot/releases/download/v4.0.0/dodot-aarch64-apple-darwin.tar.gz"
-      sha256 "baf61ec890d4e4dda862f65db131425777ebd62e6e6378bea2d8eb41c5913b67"
+      url "https://github.com/arthur-debert/dodot/releases/download/v4.1.0/dodot-aarch64-apple-darwin.tar.gz"
+      sha256 "a61f551e3b362664013d26fe20b91ac1f9d58b572b9ccb6df16ac50c3b908074"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/arthur-debert/dodot/releases/download/v4.0.0/dodot-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a93759574f6fa12e4945d4f5412ed955b669261f8c595453f18ca31143d10ad9"
+      url "https://github.com/arthur-debert/dodot/releases/download/v4.1.0/dodot-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "0998b42152c3ac3c287c1f89f2b9a444faffb65915c4a553bf5bac9a78a3987f"
     end
     on_arm do
-      url "https://github.com/arthur-debert/dodot/releases/download/v4.0.0/dodot-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "fec1c5a66f0914ee8681d98ebd040fc4be55996546d5c0ef0765236d68dcc985"
+      url "https://github.com/arthur-debert/dodot/releases/download/v4.1.0/dodot-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "998b2561053c55c257a3961491a13c862a8394138208ac34950a9349c2337efb"
     end
   end
 
