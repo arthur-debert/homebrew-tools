@@ -20,18 +20,18 @@ class Rustloc < Formula
   on_macos do
     on_arm do
       url "https://github.com/arthur-debert/rustloc/releases/download/v0.15.0/rustloc-aarch64-apple-darwin.tar.gz"
-      sha256 "72d2662c6096d66e18d1b1e8eecf934359cc750f9032cab691f9d1397f426ee8"
+      sha256 "b9414c992fc8370c00942c96f5427e190d02af397ea7e69f297d7bd8d18ed531"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/arthur-debert/rustloc/releases/download/v0.15.0/rustloc-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "b660c54ceffb19947e089d40c36a7a2e35dbcc89fc5bcfe364c0d406e510ee3f"
+      sha256 "a19a8b947103f81efc27aa76aaccc4a79c64ba348eee5c2a9c9228094e9807c6"
     end
     on_arm do
       url "https://github.com/arthur-debert/rustloc/releases/download/v0.15.0/rustloc-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "53eb410f44e930fd4989e2e35ea537d0b486d5484abb875ad767deaf7465aa02"
+      sha256 "bbf2bb54ebe70d427d0a3983002c1785422886f16cb15328cca1d343996940c1"
     end
   end
 
