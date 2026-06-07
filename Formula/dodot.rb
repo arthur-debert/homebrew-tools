@@ -11,27 +11,28 @@
 # extra URL/SHA pair if a project needs Intel-mac.
 # Add `on_arm` under on_linux for aarch64-musl, etc.
 
+
 class Dodot < Formula
   desc "Dotfiles manager that uses symlinks for live editing"
   homepage "https://github.com/arthur-debert/dodot"
-  version "5.0.0"
+  version "5.1.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/arthur-debert/dodot/releases/download/v5.0.0/dodot-aarch64-apple-darwin.tar.gz"
-      sha256 "d8ff0acc01a0db62f10a68dcde548e9608494ef8c34eda654f01fb1429293eaa"
+      url "https://github.com/arthur-debert/dodot/releases/download/v5.1.0/dodot-aarch64-apple-darwin.tar.gz"
+      sha256 "028cb9249cd26649025e1f4bc99c57255477990cf7ca0dc2161cf88a69adc26e"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/arthur-debert/dodot/releases/download/v5.0.0/dodot-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "0764bb5f90a1148cd128182208197b99eb0434225f5a270d54af3ca190b93f01"
+      url "https://github.com/arthur-debert/dodot/releases/download/v5.1.0/dodot-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "09a220592179e0fafccdb600d8e959687af51e3e97dcb1992f6bd22167a922d9"
     end
     on_arm do
-      url "https://github.com/arthur-debert/dodot/releases/download/v5.0.0/dodot-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "4d9714082da103f584e589b3be7d2b91568e7118102a2a2b6f4cb445fef6439b"
+      url "https://github.com/arthur-debert/dodot/releases/download/v5.1.0/dodot-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "ff142ae9fc096dc48c4e40772239c1dd4ccae5d0fec4cb3392bea524a662b94c"
     end
   end
 
