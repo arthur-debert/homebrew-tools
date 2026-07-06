@@ -14,24 +14,24 @@
 class Lexd < Formula
   desc "Command-line interface for the lex format"
   homepage "https://github.com/lex-fmt/lex"
-  version "0.19.1"
+  version "0.19.2"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/lex-fmt/lex/releases/download/v0.19.1/lexd-aarch64-apple-darwin.tar.gz"
-      sha256 "1fe356fb27bb49b610cb7ca2592d15fdcbae3cef451460e0a1763d59cadd04b9"
+      url "https://github.com/lex-fmt/lex/releases/download/v0.19.2/lexd-aarch64-apple-darwin.tar.gz"
+      sha256 "575ed6a2814ffd9faa116f82905797c4aefe26798ac42478920b18bce4400709"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/lex-fmt/lex/releases/download/v0.19.1/lexd-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a8d623b7439a984ce5963ea039d3c52daa5d601447bbc3012f3adab592f33e9a"
+      url "https://github.com/lex-fmt/lex/releases/download/v0.19.2/lexd-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "2ccce92867cd5353a25e937a7c4cd0ca2e622d1673a812e88c8b4737445d5df5"
     end
     on_arm do
-      url "https://github.com/lex-fmt/lex/releases/download/v0.19.1/lexd-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "456f2f645ba5f5a215eb7b865c23d31230255675b17cc961862cd3b176a2c358"
+      url "https://github.com/lex-fmt/lex/releases/download/v0.19.2/lexd-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "8c2fb750d8f0244126d5478c3f5925188ecdcc11b720a9c528f3cdd81a492789"
     end
   end
 
