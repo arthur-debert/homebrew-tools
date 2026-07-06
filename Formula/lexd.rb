@@ -11,28 +11,27 @@
 # extra URL/SHA pair if a project needs Intel-mac.
 # Add `on_arm` under on_linux for aarch64-musl, etc.
 
-
 class Lexd < Formula
   desc "Command-line interface for the lex format"
   homepage "https://github.com/lex-fmt/lex"
-  version "0.18.3"
+  version "0.19.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/lex-fmt/lex/releases/download/v0.18.3/lexd-aarch64-apple-darwin.tar.gz"
-      sha256 "76cd8183214119e8fe824f1fd81db39b5a38f1b490e927532c91093f8bdfb801"
+      url "https://github.com/lex-fmt/lex/releases/download/v0.19.1/lexd-aarch64-apple-darwin.tar.gz"
+      sha256 "1fe356fb27bb49b610cb7ca2592d15fdcbae3cef451460e0a1763d59cadd04b9"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/lex-fmt/lex/releases/download/v0.18.3/lexd-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "ae17a973edf91760fcfa2158bccef5f22457dee51378a4a655a945fe15df45c6"
+      url "https://github.com/lex-fmt/lex/releases/download/v0.19.1/lexd-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "a8d623b7439a984ce5963ea039d3c52daa5d601447bbc3012f3adab592f33e9a"
     end
     on_arm do
-      url "https://github.com/lex-fmt/lex/releases/download/v0.18.3/lexd-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "c196a5fe79e3f6314ca70cab196ff24694e124cea7a5bcd02d7baf0caf9b5491"
+      url "https://github.com/lex-fmt/lex/releases/download/v0.19.1/lexd-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "456f2f645ba5f5a215eb7b865c23d31230255675b17cc961862cd3b176a2c358"
     end
   end
 
