@@ -1,22 +1,22 @@
 class Rustloc < Formula
   desc "Rust-aware LOC counter that separates production code from tests — even in the same file"
   homepage "https://github.com/arthur-debert/rustloc"
-  version "0.21.0"
+  version "0.22.0"
   license "MIT"
 
   on_macos do
-    url "https://github.com/arthur-debert/rustloc/releases/download/v0.21.0/rustloc-aarch64-apple-darwin.tar.gz"
-    sha256 "d09be0fa0214d1a7c9279ed6386d137558f32d2e28b63ff5bdae5c14db00bf97"
+    url "https://github.com/arthur-debert/rustloc/releases/download/v0.22.0/rustloc-aarch64-apple-darwin.tar.gz"
+    sha256 "a68d8e03d56cd894127daa80c114f5c285eae1f614011496d9add7d9d6a5ad45"
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/arthur-debert/rustloc/releases/download/v0.21.0/rustloc-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "b0aff5cf8247dcdf8a1edf7bb82ca38f7d9be78b1316d348a6a581cd8b7af596"
+      url "https://github.com/arthur-debert/rustloc/releases/download/v0.22.0/rustloc-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "36092b6c908f55294f42cd529e3c27f754d00d68ef8a03ebf8884c86a4df9ede"
     end
     on_intel do
-      url "https://github.com/arthur-debert/rustloc/releases/download/v0.21.0/rustloc-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "aabb80f65dc07fa355f3dbefd1fe59bf850b7c4bb3e5371e08d4a626261970a1"
+      url "https://github.com/arthur-debert/rustloc/releases/download/v0.22.0/rustloc-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "fb9dcb564dd5ad58e8603b3b1ae66ec3ef7e5828fdd301c1ba4f0d7b37774d00"
     end
   end
 
