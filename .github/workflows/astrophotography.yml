@@ -39,6 +39,7 @@ jobs:
           brew audit --strict --except=installed arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
       - name: Install and test
         run: |
+          brew install sevenzip
           brew install --build-bottle arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
           brew postinstall arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
           brew test arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
