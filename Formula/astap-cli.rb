@@ -8,8 +8,10 @@ class AstapCli < Formula
 
   bottle do
     root_url "https://github.com/arthur-debert/homebrew-tools/releases/download/astap-cli-2026.09.01"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "dd903a7f783d0f428cd1ae8c62443ac1fc441988b0e30ce86c5aac7b115abc0f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c556c16fbfa7a236b0c76dc8bf17b501ccb74801a9f86c63111fe9934c21eeb4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddb8a8918588528daf387c047e690a6506b4a52ec2398f4dedb0438187e6dcf4"
+    sha256 cellar: :any_skip_relocation, sequoia:       "56038c50233396ccf99cb5f1a38cf00027f955e8ee9b1273eb6bd3ab8acd567c"
   end
 
   depends_on :macos

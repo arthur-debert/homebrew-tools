@@ -7,8 +7,10 @@ class Graxpert < Formula
 
   bottle do
     root_url "https://github.com/arthur-debert/homebrew-tools/releases/download/graxpert-4.0.0"
-    rebuild 1
-    sha256 cellar: "/opt/homebrew/Cellar", arm64_tahoe: "0845181784cbaa78f8a352a52aa606b4ddc298716de605fbfde02b3a627192a3"
+    rebuild 2
+    sha256 cellar: "/opt/homebrew/Cellar", arm64_sequoia: "6d43d5bd8accf92b7630b78d647266bb78bc336059c8c53ea20f9871e108ad1f"
+    sha256 cellar: "/opt/homebrew/Cellar", arm64_tahoe:   "e52f8b69161ac82de168ea2aa5c269b4137d9fa696dfd20a8ef90b18e7830154"
+    sha256 cellar: :any,                   sequoia:       "ff6c489d81e26b4e3db66d6148d1c0edfe74c759b7c4a6064d373a028d652792"
   end
 
   depends_on "sevenzip" => :build

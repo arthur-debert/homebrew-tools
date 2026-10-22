@@ -49,7 +49,7 @@ jobs:
           cd bottles
           for formula in graxpert astap-cli; do
             version=$(brew info --json=v2 "arthur-debert/tools/$formula" | jq -r '.formulae[0].versions.stable')
-            brew bottle --json --root-url="https://github.com/arthur-debert/homebrew-tools/releases/download/$formula-$version" "arthur-debert/tools/$formula"
+            brew bottle --keep-old --json --root-url="https://github.com/arthur-debert/homebrew-tools/releases/download/$formula-$version" "arthur-debert/tools/$formula"
           done
       - uses: actions/upload-artifact@v5
         with:

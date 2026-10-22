@@ -77,10 +77,16 @@ brew uninstall arthur-debert/tools/astap-cli # If already installed
 brew install --build-bottle arthur-debert/tools/astap-cli
 brew postinstall arthur-debert/tools/astap-cli
 brew test arthur-debert/tools/astap-cli
-brew bottle --json --root-url=https://github.com/arthur-debert/homebrew-tools/releases/download/astap-cli-2026.09.01 arthur-debert/tools/astap-cli
+brew bottle --keep-old --json --root-url=https://github.com/arthur-debert/homebrew-tools/releases/download/astap-cli-2026.09.01 arthur-debert/tools/astap-cli
 ```
 
-Upload the bottle archive to that GitHub release, merge its JSON with
+Rename each archive from the JSON's `local_filename` to its `filename` before
+uploading it to that GitHub release. Homebrew expects a single hyphen between
+the formula name and version in the release asset name.
+
+Merge the JSON with
 `brew bottle --merge --write --no-commit <bottle.json>`, then commit and push the
 formula's bottle checksums. Repeat for `graxpert` with its own versioned release.
-For additional architectures, merge all their JSON files together.
+For additional architectures, merge all their JSON files together, using the
+same bottle rebuild number. `--write` updates Homebrew's installed tap checkout;
+copy the bottle block back if developing in a separate checkout.
