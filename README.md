@@ -34,12 +34,20 @@ Homebrew installs 7-Zip as a build dependency when installing GraXpert from its
 upstream DMG, so extraction works inside Homebrew's build sandbox.
 
 ASTAP installs `astap_cli` and the alias `astap-cli`, with executable permissions
-and ad-hoc code signing applied automatically. Plate solving also needs a
-[star database](https://www.hnsky.org/astap.htm):
+and ad-hoc code signing applied automatically. Install the D80
+[star database](https://www.hnsky.org/astap.htm) for plate solving:
 
 ```sh
-astap_cli -f image.fits -d /path/to/database
+brew install arthur-debert/tools/astap-d80
+astap_cli -f image.fits -d "$(brew --prefix)/share/astap/d80"
 ```
+
+`astap-d80` downloads the official macOS `.pkg` and extracts its 1,476 star
+catalog tiles into Homebrew's `share/astap/d80`. It preserves the upstream
+database acknowledgements under `share/doc/astap-d80`. The installed catalog
+uses about 1.3 GB and is shared by Intel and Apple Silicon Macs. The package
+installer is not executed. Its formula version follows the upstream package's
+publication date, currently `2023.12.19`.
 
 ### Updating the formulas
 

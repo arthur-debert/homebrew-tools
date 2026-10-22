@@ -1,0 +1,33 @@
+name: ASTAP D80 database
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - Formula/astap-d80.rb
+      - .github/workflows/astap-d80.yml
+  pull_request:
+    paths:
+      - Formula/astap-d80.rb
+      - .github/workflows/astap-d80.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  database:
+    runs-on: macos-15
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_INSTALL_CLEANUP: 1
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@main
+      - name: Check formula
+        run: |
+          brew style arthur-debert/tools/astap-d80
+          brew audit --strict --except=installed arthur-debert/tools/astap-d80
+      - name: Install and test catalog
+        run: |
+          brew install arthur-debert/tools/astap-d80
+          brew test arthur-debert/tools/astap-d80

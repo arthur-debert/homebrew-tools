@@ -33,9 +33,10 @@ class AstapCli < Formula
   def caveats
     <<~EOS
       Plate solving requires a separate ASTAP star database:
-        https://www.hnsky.org/astap.htm
-      Pass its directory with astap_cli -d /path/to/database.
-      The upstream macOS database installer uses /usr/local/opt/astap.
+        brew install arthur-debert/tools/astap-d80
+      Use the Homebrew D80 database with:
+        astap_cli -f image.fits -d #{HOMEBREW_PREFIX}/share/astap/d80
+      For another database, pass its directory with astap_cli -d /path/to/database.
     EOS
   end
 
