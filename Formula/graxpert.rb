@@ -2,9 +2,14 @@ class Graxpert < Formula
   desc "Background extraction and denoising for astrophotography"
   homepage "https://github.com/Dark-Matters-Astro/GraXpert"
   url "https://github.com/Dark-Matters-Astro/GraXpert/releases/download/4.0.0/GraXpert-macos-arm64.dmg", using: :nounzip
-  version "4.0.0"
   sha256 "9fedfd8e446cc25818fc3715675437a9d6e747d4f1da626f521a31a3d97b36b2"
   license "GPL-3.0-only"
+
+  bottle do
+    root_url "https://github.com/arthur-debert/homebrew-tools/releases/download/graxpert-4.0.0"
+    rebuild 1
+    sha256 cellar: "/opt/homebrew/Cellar", arm64_tahoe: "0845181784cbaa78f8a352a52aa606b4ddc298716de605fbfde02b3a627192a3"
+  end
 
   depends_on "sevenzip" => :build
   depends_on :macos

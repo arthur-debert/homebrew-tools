@@ -6,6 +6,12 @@ class AstapCli < Formula
   sha256 "6a59b61c3b9fac987ab5b8241cbd4bffacc05816f58097f52ad1e6bd733cbc45"
   license "MPL-2.0"
 
+  bottle do
+    root_url "https://github.com/arthur-debert/homebrew-tools/releases/download/astap-cli-2026.09.01"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "dd903a7f783d0f428cd1ae8c62443ac1fc441988b0e30ce86c5aac7b115abc0f"
+  end
+
   depends_on :macos
 
   on_macos do
