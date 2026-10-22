@@ -30,6 +30,8 @@ astap_cli -h
 `graxpert` opens the GUI without arguments and supports upstream CLI options.
 The app bundle is at `$(brew --prefix graxpert)/GraXpert.app`; `brew info graxpert`
 shows how to add it to Finder. GraXpert downloads AI models on first use.
+Homebrew installs 7-Zip as a build dependency when installing GraXpert from its
+upstream DMG, so extraction works inside Homebrew's build sandbox.
 
 ASTAP installs `astap_cli` and the alias `astap-cli`, with executable permissions
 and ad-hoc code signing applied automatically. Plate solving also needs a
