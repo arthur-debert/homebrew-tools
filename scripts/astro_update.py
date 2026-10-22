@@ -30,8 +30,8 @@ def update_formula(name, version, assets, dry_run=False):
     if count != 1:
         raise ValueError(f"Expected one version in {path}")
     for arch, (url, sha256) in assets.items():
-        pattern = rf'(    on_{arch} do\n)      url "[^"\n]+"\n      sha256 "[^"\n]+"'
-        replacement = rf'\g<1>      url "{url}"\n      sha256 "{sha256}"'
+        pattern = rf'(    on_{arch} do\n)      url "[^"\n]+"([^\n]*)\n      sha256 "[^"\n]+"'
+        replacement = rf'\g<1>      url "{url}"\g<2>\n      sha256 "{sha256}"'
         result, count = re.subn(pattern, replacement, result)
         if count != 1:
             raise ValueError(f"Expected one {arch} download in {path}")

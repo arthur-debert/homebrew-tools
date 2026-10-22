@@ -4,21 +4,24 @@ class Graxpert < Formula
   version "4.0.0.rc1"
   license "GPL-3.0-only"
 
+  depends_on "sevenzip" => :build
   depends_on :macos
 
   on_macos do
     on_arm do
-      url "https://github.com/Dark-Matters-Astro/GraXpert/releases/download/4.0.0.rc1/GraXpert-macos-arm64.dmg"
+      url "https://github.com/Dark-Matters-Astro/GraXpert/releases/download/4.0.0.rc1/GraXpert-macos-arm64.dmg", using: :nounzip
       sha256 "bba1dbcbd20782b5af8483d3536bfd9e7fc5ed2873e66bc1949271d1a982cfd8"
     end
     on_intel do
-      url "https://github.com/Dark-Matters-Astro/GraXpert/releases/download/4.0.0.rc1/GraXpert-macos-x86_64.dmg"
+      url "https://github.com/Dark-Matters-Astro/GraXpert/releases/download/4.0.0.rc1/GraXpert-macos-x86_64.dmg", using: :nounzip
       sha256 "5a845da864dcdf54fcd4d7148f2834df131046e04d2aa95f21a4b95b963870b8"
     end
   end
 
   def install
-    prefix.install "GraXpert.app"
+    # Extract without mounting the DMG and preserve PyInstaller's relative symlink chains.
+    system "7zz", "x", "-y", "-snld10", "-ounpacked", cached_download
+    prefix.install Dir["unpacked/*/GraXpert.app"].fetch(0)
     bin.write_exec_script prefix/"GraXpert.app/Contents/MacOS/GraXpert"
     bin.install_symlink "GraXpert" => "graxpert"
   end
