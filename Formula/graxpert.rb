@@ -4,6 +4,12 @@ class Graxpert < Formula
   version "4.0.0.rc1"
   license "GPL-3.0-only"
 
+  bottle do
+    root_url "https://github.com/arthur-debert/homebrew-tools/releases/download/graxpert-4.0.0.rc1"
+    rebuild 1
+    sha256 cellar: "/opt/homebrew/Cellar", arm64_tahoe: "9ce21629a7189a308f66e81df7ffeee2fc9fbf42c49954c5cf70dde98a9854f0"
+  end
+
   depends_on "sevenzip" => :build
   depends_on :macos
 
