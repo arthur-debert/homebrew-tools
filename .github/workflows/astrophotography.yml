@@ -1,0 +1,56 @@
+name: Astrophotography bottles
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - Formula/graxpert.rb
+      - Formula/astap-cli.rb
+      - scripts/astro_update.py
+      - scripts/update-graexpert
+      - scripts/update-astap
+      - .github/workflows/astrophotography.yml
+  pull_request:
+    paths:
+      - Formula/graxpert.rb
+      - Formula/astap-cli.rb
+      - scripts/**
+      - .github/workflows/astrophotography.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bottles:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_INSTALL_CLEANUP: 1
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@main
+      - name: Check formulas
+        run: |
+          brew style arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
+          brew audit --strict --except=installed arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
+      - name: Install and test
+        run: |
+          brew install --build-bottle arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
+          brew postinstall arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
+          brew test arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
+      - name: Build bottles
+        run: |
+          mkdir -p bottles
+          cd bottles
+          for formula in graxpert astap-cli; do
+            version=$(brew info --json=v2 "arthur-debert/tools/$formula" | jq -r '.formulae[0].versions.stable')
+            brew bottle --json --root-url="https://github.com/arthur-debert/homebrew-tools/releases/download/$formula-$version" "arthur-debert/tools/$formula"
+          done
+      - uses: actions/upload-artifact@v5
+        with:
+          name: astrophotography-${{ matrix.os }}
+          path: bottles/*

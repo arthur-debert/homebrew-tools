@@ -18,12 +18,24 @@ class Graxpert < Formula
     end
   end
 
+  skip_clean "GraXpert.app"
+
   def install
     # Extract without mounting the DMG and preserve PyInstaller's relative symlink chains.
     system "7zz", "x", "-y", "-snld10", "-sns-", "-ounpacked", cached_download
     prefix.install Dir["unpacked/*/GraXpert.app"].fetch(0)
-    bin.write_exec_script prefix/"GraXpert.app/Contents/MacOS/GraXpert"
-    bin.install_symlink "GraXpert" => "graxpert"
+    (bin/"graxpert").write <<~SH
+      #!/bin/bash
+      exec "#{opt_prefix}/GraXpert.app/Contents/MacOS/GraXpert" "$@"
+    SH
+  end
+
+  post_install_steps do
+    # Homebrew can change bundled dylib paths after install, invalidating the app seal.
+    run "/usr/bin/codesign",
+        args:           ["--force", "--deep", "--sign", "-", "{{prefix}}/GraXpert.app"],
+        writable_paths: ["GraXpert.app"],
+        writable_base:  :prefix
   end
 
   def caveats
@@ -36,6 +48,7 @@ class Graxpert < Formula
   end
 
   test do
+    system "/usr/bin/codesign", "--verify", "--deep", "--strict", prefix/"GraXpert.app"
     assert_match version.to_s, shell_output("#{bin}/graxpert --version 2>&1")
   end
 end

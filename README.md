@@ -73,7 +73,9 @@ test installation with `brew update`, `brew upgrade <formula>`, and
 Build and test on each supported macOS/CPU combination. For example:
 
 ```sh
-brew reinstall --build-bottle arthur-debert/tools/astap-cli
+brew uninstall arthur-debert/tools/astap-cli # If already installed
+brew install --build-bottle arthur-debert/tools/astap-cli
+brew postinstall arthur-debert/tools/astap-cli
 brew test arthur-debert/tools/astap-cli
 brew bottle --json --root-url=https://github.com/arthur-debert/homebrew-tools/releases/download/astap-cli-2026.09.01 arthur-debert/tools/astap-cli
 ```
