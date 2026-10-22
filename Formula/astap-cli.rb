@@ -1,25 +1,17 @@
 class AstapCli < Formula
   desc "ASTAP command-line astrometric solver"
   homepage "https://www.hnsky.org/astap.htm"
-  version "2025.07.14"
+  url "https://downloads.sourceforge.net/project/astap-program/macOS%20installer/astap_command-line_version_macOS_M1.zip"
+  version "2026.09.01"
+  sha256 "6a59b61c3b9fac987ab5b8241cbd4bffacc05816f58097f52ad1e6bd733cbc45"
   license "MPL-2.0"
-
-  bottle do
-    root_url "https://github.com/arthur-debert/homebrew-tools/releases/download/astap-cli-2025.07.14"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "05ad4ff6bae5605546afddb34bbe10ee68e141030cf66b8d692e6d0e56f0f209"
-  end
 
   depends_on :macos
 
   on_macos do
-    on_arm do
-      url "https://downloads.sourceforge.net/project/astap-program/macOS%20installer/older/astap_command-line_version_macOS_M1%20v2025.07.16.zip"
-      sha256 "4f1ea92ff87af7948a44fe9fcfd87b5c48b3113fb6eded8d95636d35b7b8830e"
-    end
     on_intel do
-      url "https://downloads.sourceforge.net/project/astap-program/macOS%20installer/older/astap_command-line_version_macOS_x86_64%20v2025.07.16.zip"
-      sha256 "09fee8a93fd5d3b54877474af183e6a26d060aa200e7a848d1dc5072c53497bc"
+      url "https://downloads.sourceforge.net/project/astap-program/macOS%20installer/astap_command-line_version_macOS_x86_64.zip"
+      sha256 "3cc08ef3f823dd02bcbde2a0b8247db2f24607777e63adaea0a4fe578f6db343"
     end
   end
 
