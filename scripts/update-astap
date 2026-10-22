@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+import argparse
+from pathlib import Path
+import re
+import tempfile
+import zipfile
+
+from astro_update import download, update_formula
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Update ASTAP CLI from official SourceForge macOS binaries. Requires curl; reads versions without executing downloads.")
+    parser.add_argument("--archive", help="Older upstream filename date, e.g. 2025.07.16 (the embedded CLI version may differ)")
+    parser.add_argument("--dry-run", action="store_true", help="Download and verify assets, then print the formula diff")
+    args = parser.parse_args()
+    if args.archive and not re.fullmatch(r"\d{4}\.\d{2}\.\d{2}", args.archive):
+        parser.error("--archive must be YYYY.MM.DD")
+    base = "https://downloads.sourceforge.net/project/astap-program/macOS%20installer/"
+    assets = {}
+    versions = set()
+    with tempfile.TemporaryDirectory(prefix="update-astap-") as directory:
+        for arch, suffix, cpu in [("arm", "M1", 0x100000c), ("intel", "x86_64", 0x1000007)]:
+            filename = f"astap_command-line_version_macOS_{suffix}"
+            url = base + (f"older/{filename}%20v{args.archive}.zip" if args.archive else f"{filename}.zip")
+            archive = Path(directory) / f"{arch}.zip"
+            sha256 = download(url, archive)
+            with zipfile.ZipFile(archive) as bundle:
+                binary = bundle.read("astap_cli")
+            if binary[:4] != b"\xcf\xfa\xed\xfe" or int.from_bytes(binary[4:8], "little") != cpu:
+                raise ValueError(f"Expected {suffix} Mach-O executable")
+            found = set(re.findall(rb"(?<![0-9.])20\d{2}\.[01]\d\.[0-3]\d(?![0-9.])", binary))
+            if len(found) != 1 or b"ASTAP astrometric solver version CLI-" not in binary:
+                raise ValueError(f"Cannot identify ASTAP CLI version in {url}")
+            versions.add(found.pop().decode("ascii"))
+            assets[arch] = (url, sha256)
+    if len(versions) != 1:
+        raise ValueError(f"Mac architectures have different CLI versions: {versions}")
+    update_formula("astap-cli", versions.pop(), assets, args.dry_run)
+
+
+if __name__ == "__main__":
+    main()
