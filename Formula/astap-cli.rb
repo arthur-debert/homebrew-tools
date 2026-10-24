@@ -5,14 +5,7 @@ class AstapCli < Formula
   version "2026.09.01"
   sha256 "6a59b61c3b9fac987ab5b8241cbd4bffacc05816f58097f52ad1e6bd733cbc45"
   license "MPL-2.0"
-
-  bottle do
-    root_url "https://github.com/arthur-debert/homebrew-tools/releases/download/astap-cli-2026.09.01"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c556c16fbfa7a236b0c76dc8bf17b501ccb74801a9f86c63111fe9934c21eeb4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddb8a8918588528daf387c047e690a6506b4a52ec2398f4dedb0438187e6dcf4"
-    sha256 cellar: :any_skip_relocation, sequoia:       "56038c50233396ccf99cb5f1a38cf00027f955e8ee9b1273eb6bd3ab8acd567c"
-  end
+  revision 1
 
   depends_on :macos
 
@@ -25,8 +18,21 @@ class AstapCli < Formula
 
   def install
     chmod 0755, "astap_cli"
-    bin.install "astap_cli"
-    system "/usr/bin/codesign", "--force", "--sign", "-", bin/"astap_cli"
+    libexec.install "astap_cli"
+    system "/usr/bin/codesign", "--force", "--sign", "-", libexec/"astap_cli"
+    (bin/"astap_cli").write <<~SH
+      #!/bin/sh
+      for argument in "$@"; do
+        if [ "$argument" = "-d" ]; then
+          exec "#{opt_libexec}/astap_cli" "$@"
+        fi
+      done
+      database="#{HOMEBREW_PREFIX}/share/astap/d80"
+      if [ -r "$database/d80_0101.1476" ]; then
+        set -- -d "$database" "$@"
+      fi
+      exec "#{opt_libexec}/astap_cli" "$@"
+    SH
     bin.install_symlink "astap_cli" => "astap-cli"
   end
 
@@ -34,13 +40,15 @@ class AstapCli < Formula
     <<~EOS
       Plate solving requires a separate ASTAP star database:
         brew install arthur-debert/tools/astap-d80
-      Use the Homebrew D80 database with:
-        astap_cli -f image.fits -d #{HOMEBREW_PREFIX}/share/astap/d80
-      For another database, pass its directory with astap_cli -d /path/to/database.
+      The launcher uses Homebrew's D80 automatically when installed.
+      In PixInsight, select the stable executable path:
+        #{HOMEBREW_PREFIX}/bin/astap_cli
+      To use another database, pass -d /path/to/database.
     EOS
   end
 
   test do
+    system "/usr/bin/codesign", "--verify", libexec/"astap_cli"
     assert_match "CLI-#{version}", shell_output("#{bin}/astap_cli -h")
 
     # A FITS image containing 64 Gaussian stars exercises detection without a database.
@@ -57,5 +65,17 @@ class AstapCli < Formula
     output = shell_output("#{bin}/astap_cli -f #{testpath}/stars.fits -analyse 10")
     assert_match "STARS=64", output
     assert_match "HFD_MEDIAN=5.0", output
+
+    custom_database = testpath/"custom-database"
+    custom_database.mkpath
+    output = shell_output("#{bin}/astap_cli -f #{testpath}/stars.fits -d #{custom_database}", 1)
+    assert_match "no star database found at #{custom_database}/", output
+
+    if (HOMEBREW_PREFIX/"share/astap/d80/d80_0101.1476").readable?
+      output = shell_output("#{bin}/astap_cli -f #{testpath}/stars.fits -fov 1 -r 0.1 -o #{testpath}/solve -log", 1)
+      assert_match "Using star database D80", output
+      assert_path_exists testpath/"solve.ini"
+      refute_match "No star database found", (testpath/"solve.ini").read
+    end
   end
 end

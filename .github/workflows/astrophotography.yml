@@ -40,6 +40,7 @@ jobs:
       - name: Install and test
         run: |
           brew install sevenzip
+          brew install arthur-debert/tools/astap-d80
           brew install --build-bottle arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
           brew postinstall arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
           brew test arthur-debert/tools/graxpert arthur-debert/tools/astap-cli
@@ -48,7 +49,7 @@ jobs:
           mkdir -p bottles
           cd bottles
           for formula in graxpert astap-cli; do
-            version=$(brew info --json=v2 "arthur-debert/tools/$formula" | jq -r '.formulae[0].versions.stable')
+            version=$(brew info --json=v2 "arthur-debert/tools/$formula" | jq -r '.formulae[0] | .versions.stable + (if .revision > 0 then "_" + (.revision | tostring) else "" end)')
             brew bottle --keep-old --json --root-url="https://github.com/arthur-debert/homebrew-tools/releases/download/$formula-$version" "arthur-debert/tools/$formula"
           done
       - uses: actions/upload-artifact@v5

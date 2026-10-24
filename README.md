@@ -39,7 +39,7 @@ and ad-hoc code signing applied automatically. Install the D80
 
 ```sh
 brew install arthur-debert/tools/astap-d80
-astap_cli -f image.fits -d "$(brew --prefix)/share/astap/d80"
+astap_cli -f image.fits
 ```
 
 `astap-d80` downloads the official macOS `.pkg` and extracts its 1,476 star
@@ -48,6 +48,12 @@ database acknowledgements under `share/doc/astap-d80`. The installed catalog
 uses about 1.3 GB and is shared by Intel and Apple Silicon Macs. The package
 installer is not executed. Its formula version follows the upstream package's
 publication date, currently `2023.12.19`.
+
+The `astap_cli` and `astap-cli` launchers select the Homebrew D80 database
+automatically when it is installed. An explicit `-d /path/to/database` overrides
+that default. In PixInsight's ASTAP executable setting, choose
+`/opt/homebrew/bin/astap_cli` on Apple Silicon or `/usr/local/bin/astap_cli` on
+Intel. These paths continue to work after Homebrew upgrades.
 
 ### Updating the formulas
 
